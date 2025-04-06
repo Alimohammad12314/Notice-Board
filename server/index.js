@@ -11,11 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection with better error handling
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ Connected to MongoDB successfully'))
   .catch(err => {
-    console.error('❌ MongoDB connection error:', err.message);
+    console.error('MongoDB connection error:', err.message);
     console.error('Connection string:', process.env.MONGODB_URI);
     process.exit(1);
   });
